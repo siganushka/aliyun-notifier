@@ -39,6 +39,10 @@ Siganushka\Notifier\Bridge\Aliyun\AliyunTransportFactory:
 ```php
 namespace App\Controller;
 
+use Siganushka\Notifier\Bridge\Aliyun\AliyunSmsMessage;
+use Symfony\Component\Notifier\Exception\TransportException;
+use Symfony\Component\Notifier\TexterInterface;
+
 class FooController
 {
     /**
@@ -52,7 +56,12 @@ class FooController
         ];
 
         $message = new AliyunSmsMessage('18611111111', $templateCode, $templateParam);
-        $texter->send($message);
+
+        try {
+            $texter->send($message);
+        } catch (TransportException $th) {
+            // 发送失败
+        }
 
         // ...
     }
