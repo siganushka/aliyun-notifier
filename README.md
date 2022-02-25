@@ -2,7 +2,7 @@
 
 适用于 [symfony/notifier](https://symfony.com/doc/current/notifier.html) 消息组件的 [阿里云](https://help.aliyun.com/document_detail/101414.html) 短信传输。
 
-> 实验性项目，请勿在生产环境中使用。
+> 该项目已废弃。
 
 ### 安装
 
